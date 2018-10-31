@@ -1,5 +1,5 @@
 {
-    "name": "rodri/projetosimonetti",
+    "name": "rodrigodil/projetosimonetti",
     "description": "Projeto Simonetti",
     "authors": [
         {
@@ -9,12 +9,12 @@
     ],
     "require": {
         "phpmailer/phpmailer": "^6.0",
-        "slim/slim": "^3.11",
+        "slim/slim": "2.0",
         "rain/raintpl": "^3.1"
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\Rodrigodil\\php-classes\\src"
+            "rodrigodil\\": "vendor\\rodrigodil\\php-classes\\src"
         }
     }
 
