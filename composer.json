@@ -1,0 +1,21 @@
+{
+    "name": "rodri/projetosimonetti",
+    "description": "Projeto Simonetti",
+    "authors": [
+        {
+            "name": "Rodrigo Palombo Chisté",
+            "email": "rodrigodil@live.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.0",
+        "slim/slim": "^3.11",
+        "rain/raintpl": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "vendor\\Rodrigodil\\php-classes\\src"
+        }
+    }
+
+}
