@@ -22,6 +22,8 @@ class Page {
     public function __construct($opts = array(), $tpl_dir = "/views/")
     {
 
+        $this->defaults["data"]["session"] = $_SESSION;
+
         $this->options = array_merge($this->defaults, $opts);
 
         $config = array(
@@ -51,10 +53,10 @@ class Page {
     private function setData($data = array())
     {
 
-        foreach($data as $key => $val)
+        foreach($data as $key => $value)
         {
 
-            $this->tpl->assign($key, $val);
+            $this->tpl->assign($key, $value);
 
         }
 
