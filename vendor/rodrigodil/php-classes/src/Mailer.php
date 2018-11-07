@@ -53,13 +53,14 @@ class Mailer {
 
         $this -> mail -> Port = 587;
 
-        /*$this -> mail -> SMTPOptions = array (
+        $this->mail->isSMTP();
+        $this->mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,
                 'verify_peer_name' => false,
                 'allow_self_signed' => true
-            ));*/
-
+            )
+        );
 
         $this -> mail -> SMTPSecure = 'tls';
 
