@@ -6,6 +6,7 @@ use \Slim\Slim;
 use \rodrigodil\Page;
 use \rodrigodil\PageAdmin;
 use \rodrigodil\Model\User;
+use \rodrigodil\Model\Category;
 
 $app = new Slim();
 
@@ -230,6 +231,55 @@ $app->post("/admin/forgot/reset", function (){
 
 
     ));
+
+});
+
+$app->get("/admin/categories", function () {
+
+    $categories = Category::listAll();
+
+    $page = new PageAdmin();
+
+    $page->setTpl("categories", [
+        'categories'=>$categories
+
+    ]);
+
+});
+
+$app->get("/admin/categories/create", function () {
+
+    $page = new PageAdmin();
+
+    $page->setTpl("categories-create");
+
+
+});
+
+$app->get("/admin/categories/create", function () {
+
+    $category = new Category();
+
+    $category->setData($_POST);
+
+    $category->save();
+
+    header('Location: /admin/category');
+    exit;
+
+
+});
+
+$app->get("/admin/categories/:idcategory/delete", function ($idcategory){
+
+    $category = new Category();
+
+    $category->get((int) $idcategory);
+
+    $category->delete();
+
+    header('Location: /admin/category');
+    exit;
 
 });
 
