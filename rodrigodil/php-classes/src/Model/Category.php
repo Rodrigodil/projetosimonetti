@@ -50,7 +50,7 @@ class Category extends Model {
 
         $sql = new Sql();
 
-        $results = $sql->select("SELECT * FROM tb_categories WHERE id_category = :idcategory", [
+        $results = $sql->select("SELECT * FROM tb_categories WHERE idcategory = :idcategory", [
 
             ':idcategory'=>$idcategory
 

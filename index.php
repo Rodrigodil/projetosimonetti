@@ -260,7 +260,7 @@ $app->get("/admin/categories/create", function () {
 
 });
 
-$app->get("/admin/categories/create", function () {
+$app->post("/admin/categories/create", function () {
 
     User::verifyLogin();
 
@@ -282,7 +282,7 @@ $app->get("/admin/categories/:idcategory/delete", function ($idcategory){
 
     $category = new Category();
 
-    $category->get((int) $idcategory);
+    $category->get((int)$idcategory);
 
     $category->delete();
 
@@ -308,7 +308,7 @@ $app->get("/admin/categories/:idcategory", function ($idcategory){
 
 });
 
-$app->get("/admin/categories/:idcategory", function ($idcategory){
+$app->post("/admin/categories/:idcategory", function ($idcategory){
 
     User::verifyLogin();
 
