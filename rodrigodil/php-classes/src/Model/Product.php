@@ -24,6 +24,18 @@ class Product extends Model {
 
     }
 
+    /*   Lista os Produtos do banco de dados na Pagina principal   */
+    public static function checkList($list){
+
+        foreach ($list as &$row){
+            $p = new Product();
+            $p->setData($row);
+            $row = $p->getValues();
+
+        }
+            return $list;
+    }
+
     /* Metodo de salvar */
 
     public function save()
