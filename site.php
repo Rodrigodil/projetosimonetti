@@ -9,6 +9,7 @@
 use \rodrigodil\Page;
 use \rodrigodil\Model\Product;
 use \rodrigodil\Model\Category;
+use \rodrigodil\Model\Cart;
 
 $app->get('/', function() {
 
@@ -20,14 +21,6 @@ $app->get('/', function() {
         'products'=>Product::checkList($products)
 
     ]);
-
-
-
-    /*$sql = new rodrigodil\DB\Sql();
-
-    $results = $sql->select("SELECT * FROM tb_users");
-
-    echo json_encode($results);*/
 
 });
 
@@ -72,6 +65,16 @@ $app->get("/products/:desurl", function ($desurl){
         'product'=>$product->getValues(),
         'categories'=>$product->getCategories()
     ]);
+
+});
+
+$app->get("/cart", function (){
+
+    $cart = Cart::getFromSession();
+
+    $page = new Page();
+
+    $page->setTpl("cart");
 
 });
 
